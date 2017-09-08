@@ -24,6 +24,7 @@ define command{
 ### If using nrpe 
 Add to `nrpe_local.cfg`:
 ```
+dont_blame_nrpe=1
 command[asterisk_queue_members]=sudo /usr/lib/nagios/plugins/asterisk_queue_members $ARG1$
 command[asterisk_peer]=sudo /usr/lib/nagios/plugins/asterisk_peer $ARG1$
 ```
@@ -32,6 +33,7 @@ Add to `/etc/sudoers`:
 ```
 nagios ALL=(ALL) NOPASSWD: /usr/lib/nagios/plugins/asterisk*
 ```
+
 
 ### Configure service on remote nagios server like:
 ```
