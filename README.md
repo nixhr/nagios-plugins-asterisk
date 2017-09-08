@@ -4,7 +4,7 @@ simple nagios plugins for monitoring asterisk peers, queues and other stuff
 ## INSTALLATION:
 clone the repo into /somewhere/path
 ```
-git clone https://github.com/nixhr/nagios-plugins/asterisk
+git clone https://github.com/nixhr/nagios-plugins-asterisk
 ```
 create links in `/usr/lib/nagios/plugins` or wherever your plugins reside
 
