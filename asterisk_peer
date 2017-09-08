@@ -1,0 +1,14 @@
+#!/bin/bash
+
+PEER_NAME=$1
+
+STATUS=$(rasterisk -rx "sip show peer ${1}"|grep -E "Status|not found"|sed -e 's/.*Status.*: //')
+if echo $STATUS|grep -qE "^OK"
+then
+  echo "OK - Status: $STATUS"
+  exit 0
+else
+  echo "CRITICAL - Status: $STATUS"
+  exit 2
+fi
+echo $STATUS

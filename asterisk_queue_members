@@ -1,0 +1,7 @@
+#!/bin/bash
+
+QUEUE_NAME=$1
+
+MEMBERS_ONLINE=$(rasterisk -rx "queue show ${1}_q1"|grep -E "Not in use|Busy" |wc -l)
+[[ $MEMBERS_ONLINE -lt  1 ]] && echo "CRITICAL - $MEMBERS_ONLINE phones registered" && exit 2 || echo "OK - $MEMBERS_ONLINE phones registered" && exit 0
+echo $MEMBERS_ONLINE
