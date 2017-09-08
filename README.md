@@ -8,7 +8,8 @@ git clone https://github.com/nixhr/nagios-plugins-asterisk
 ```
 create links in `/usr/lib/nagios/plugins` or wherever your plugins reside
 
-### If using it locally add to nagios commands.cfg:
+### If using it locally 
+Add to nagios `commands.cfg`:
 ```
 define command{
         command_name    asterisk_queue_members
@@ -20,7 +21,8 @@ define command{
 }
 ```
 
-### If using nrpe add to nrpe_local.cfg:
+### If using nrpe 
+Add to `nrpe_local.cfg`:
 ```
 command[asterisk_queue_members]=sudo /usr/lib/nagios/plugins/asterisk_queue_members $ARG1$
 command[asterisk_peer]=sudo /usr/lib/nagios/plugins/asterisk_peer $ARG1$
